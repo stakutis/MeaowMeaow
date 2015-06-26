@@ -1,0 +1,24 @@
+// This file is needed for building a Chrome App/extension
+
+{
+  "name": "MeaowMeaow!",
+  "description": "Human-aware robots",
+  "version": "0.1",
+  "manifest_version": 2,
+  "app": {
+    "background": {
+      "scripts": ["MM/Robots/Sparki/Examples/background.js"]
+    } /*,
+
+    "icons": {
+      "16": "calculator-16.png",
+      "128": "calculator-128.png"
+    }
+    */
+  },
+  "bluetooth": {
+      "uuids": ["00001101-0000-1000-8000-00805f9b34fb"],
+      "socket": true
+
+  }
+}

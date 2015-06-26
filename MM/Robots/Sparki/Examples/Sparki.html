@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .threed {
+        font-size: 30px;
+        color: #CCCCCC;
+        text-shadow: 0 1px 0 #999999, 0 2px 0 #888888,
+        0 3px 0 #777777, 0 4px 0 #666666,
+        0 5px 0 #555555, 0 6px 0 #444444,
+        0 7px 0 #333333, 0 8px 7px rgba(0, 0, 0, 0.4),
+        0 9px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .tiny {
+        font-size: 9px;
+        font-family: arial, helvetica;
+        color: blue;
+        text-align: right;
+        line-height: 92%;
+      }
+
+      .SensorTable {
+        border: 1px solid blue;
+        border-collapse: collapse;
+      }
+      th {
+        background-color: darkgrey;
+        color: white;
+        width: 35px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+
+    <table width="100%">
+      <tr>
+        <td><img src="TwoCats.jpg" width="100"></td>
+        <td  align="center" valign="top"><div class="threed">MeaowMeaow</div></td>
+        <td width="100" class="tiny" valign="top"><b>Concord Software</b><br>Chris Stakutis<br>chris.stakutis@<br>gmail.com</td>
+      </tr>
+
+    </table>
+
+    <table>
+      <tr><td><b>Range Finder</b></td><td><b>Sensor values</b></td></tr>
+<tr><td>
+ <span style="display: inline;">
+   <table><tr><td>
+        <canvas id="myCanvas" width="350" height="250"
+                style="border:1px solid #0000ff;">
+        </canvas>
+     </td></tr>
+     <tr><td align="center">
+       <img src="RobotStanding.png" width="40"/>
+     </td></tr>
+     </table>
+ </span>
+</td>
+  <td valign="top">
+<span style="display: inline;">
+<table class="SensorTable">
+  <tr>
+    <th colspan="2" align="left">Edge</th><th colspan="3" align="center">Line Test</th><th colspan="2" align="right">Edge</th>
+  </tr>
+  <tr>
+    <th>Left</th> <th> </th> <th>Left</th> <th>Cntr</th> <th>Right</th> <th> </th> <th>Right</th>
+  </tr>
+  <tr align="right">
+    <td id="EL">EL</td> <td> </td> <td id="LL">LL</td> <td id="LC">LC</td> <td id="LR">LR</td> <td> </td> <td id="ER">ER</td>
+  </tr>
+
+  <tr>
+    <th colspan="7">Top Sensor</th>
+  </tr>
+  <tr>
+    <th>Left</th> <th></th>  <th> </th> <th>Center</th> <th> </th> <th></th><th>Right</th>
+  </tr>
+  <tr align="right">
+    <td id="TL">TL</td> <td></td> <td></td>  <td id="TC">TC</td> <td></td> <td></td> <td id="TR">TR</td>
+  </tr>
+
+  <tr>
+    <th colspan="3">Accel</th> <th></th> <th colspan="3">Magn</th>
+  </tr>
+  <tr>
+    <th>AX</th> <th>AY</th> <th>AZ</th> <th> </th> <th>MX</th> <th>MY</th> <th>MZ</th>
+  </tr>
+  <tr align="right">
+    <td id="AX">AX</td> <td id="AY">AY</td> <td id="AZ">AZ</td>  <td> </td> <td id="MX">MX</td> <td id="MY">MY</td> <td id="MZ">MZ</td>
+  </tr>
+
+  <tr>
+    <th>Volt</th> <th>TObj</th> <th>TRm</th> <th>Dist</th>  <th> </th> <th>Mem</th>  <th>Motor</th>
+  </tr>
+  <tr align="right">
+    <td id="SV">SV</td> <td id="TO">TO</td><td id="TS">TS</td> <td id="DD">DD</td>  <td> </td> <td id="ML">ML</td> <td id="MR">MR</td>
+  </tr>
+</table>
+</span>
+  </td></tr></table>
+
+<form>
+<table>
+  <tr>
+  <td align="right">Run program:</td>
+    <td>
+      <select id="select" disabled></select>
+    </td>
+  <td><button id="runButton">Run</button>
+    <button id="abortButton">Abort</button></td><td id="programStatus" width="200">
+  </td></tr>
+  <tr>
+    <td align="right">Send 1 Command:</td><td><input size="20" id="command"/></td>
+  <td><button id="commandButton">Send</button></td><td></td></tr>
+  <tr><td align="right">Last sent:</td><td> <div id="LastSent">    </div></td></tr>
+  <tr><td align="right">Response:</td><td colspan="3"> <div id="Response">    </div></td></tr>
+  <tr><td align="right"> Robot Says:</td><td colspan="3"><div id="RobotSays"></div></td></tr>
+  </table>
+</form>
+
+    <script src="jquery.min.js"></script>
+    <script src="../../../MM.js"></script>
+    <script src="../../../Executioner.js"></script>
+
+    <script src="../../../CommunicationDrivers/CommunicationDrivers.js"></script>
+    <script src="../../../CommunicationDrivers/SerialBluetoothChrome.js"></script>
+<!--
+    <script src="../../../Health/CommunicationWrapper.js"></script>
+    <script src="../../../Health/am1.js"></script>
+-->
+    <script src="../Sparki.js"></script>
+
+    <script src="RangeCanvas.js"></script>
+    <script src="SparkiGui.js"></script>
+    <script src="programs.js"></script>
+
+  </body>
+</html>
